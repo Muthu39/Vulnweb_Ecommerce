@@ -18,11 +18,14 @@ function ProductDetail() {
   if (!product) return <h2>Loading...</h2>;
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+    <div className="product-detail">
+      <img src={product.image} alt={product.name} />
+      <div className="product-detail-content">
+        <h2>{product.name}</h2>
+        <p>{product.description}</p>
+        <p className="price">Price: ${product.price}</p>
+        <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+      </div>
     </div>
   );
 }
